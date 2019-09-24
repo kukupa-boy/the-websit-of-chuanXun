@@ -4,6 +4,8 @@ const utils = require('./utils')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
 
+const webpack = require("webpack");
+
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
@@ -21,6 +23,16 @@ const createLintingRule = () => ({
 
 module.exports = {
   context: path.resolve(__dirname, '../'),
+  //------------------------------------jquery的配置-------------------------
+  plugins: [// 3. 配置全局使用 jquery
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery",
+      jquery: "jquery",
+      "window.jQuery": "jquery"
+    })],
+
+
   entry: {
     app: './src/main.js'
   },
@@ -35,7 +47,9 @@ module.exports = {
     extensions: ['.js', '.vue', '.json'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
-      '@': resolve('src'),
+      '@': resolve('src')
+      // ,
+      // 'jquery':path.resolve(__dirname,"../node_modules/jquery/src/jquery.js")
     }
   },
   module: {

@@ -3,6 +3,8 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import  "jquery"
+
 
 // ----------------------------------------------element.js配置---------------------------------------------------------
 import ElementUI from 'element-ui'
@@ -31,8 +33,9 @@ Vue.prototype.HOST='/api'
 Vue.prototype.axios=Axios;
 
 
-//----------------------------------------------使用jquery的配置--------------------------------------------------------
-
+//----------------------------------------------使用echarts的配置--------------------------------------------------------
+import echarts from 'echarts'
+Vue.prototype.$echarts = echarts
 
 
 
