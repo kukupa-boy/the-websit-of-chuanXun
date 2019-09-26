@@ -1,9 +1,5 @@
 <template>
     <div id="sidebar">
-<!--              <router-view to="sidebar/authorityManagerment"></router-view>-->
-<!--              <router-view to="sidebar/wetherReport"></router-view>-->
-<!--              <router-view to="sidebar/shipManagerment"></router-view>-->
-<!--              <router-view to="sidebar/videoMonitor"></router-view>-->
         <div class="zhanWeiBox"></div>
         <el-row class="tac">
           <el-col :span="24">
@@ -18,7 +14,7 @@
               <el-menu-item index="1">
                 <i  style="height: 30px; width: 25px;" class="el-icon-menu iconSize"></i>
 <!--                <span slot="sidebar/wetherReport">     </span>-->
-                   <router-link to="/sidebar/wetherReport">气象报告</router-link>
+                   <router-link to="/weatherReport/defaultComponents">气象报告</router-link>
               </el-menu-item>
               <el-submenu index="2">
                 <template slot="title">
@@ -129,7 +125,6 @@
   }
   .router-link-active{
     color: #2364e4;
-
   }
   .el-submenu > .el-submenu__title{
     display: inline-block;

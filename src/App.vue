@@ -33,8 +33,7 @@ export default {
       this.$store.screenHeight=parseInt(this.clientHeight);
   },
   methods: {
-
-}
+  }
   }
 </script>
 
