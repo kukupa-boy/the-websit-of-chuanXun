@@ -4,7 +4,6 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 //state对象主要是储存数据
   var state={
-    headerName:"search.vue",
     screenHeight:""
   }
 //mutations主要是为了该bainstate里面的数据值
