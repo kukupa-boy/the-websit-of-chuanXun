@@ -1,15 +1,16 @@
 <template>
   <div>
+
     <div class="tem_sun_moon_pre">
       <div class="tem_sun_moon">
         <!--温度ji-->
         <div class="temperature">
-
+          <Thermometer></Thermometer>
         </div>
         <!--太阳-->
         <div class="sun">
           <div><span>2019/09/23</span> <span>白天</span></div>
-          <div><img src="../../../../assets/iconfont/sun.png"></div>
+          <div><img src="../../../../assets/weather_system/image/image_t/sun.png"></div>
           <h1>晴</h1>
           <p>50℃</p>
           <p>日出<span>6:</span><span>15</span> </p>
@@ -18,7 +19,7 @@
         <!-- 夜晚-->
         <div class="moon">
           <div><span>2019/09/23</span> <span>白天</span></div>
-          <div><img src="../../../../assets/iconfont/night_mode.png"></div>
+          <div><img src="../../../../assets/weather_system/image/image_t/night_mode.png"></div>
           <h1>阴</h1>
           <p>50℃</p>
           <p>日出<span>6:</span><span>15</span> </p>
@@ -26,14 +27,22 @@
         </div>
       </div>
       <!-- 降水量-->
-      <div class="precipitation"></div>
+      <div class="precipitation">
+        <BrokenLineDiagram type="Chart1"></BrokenLineDiagram>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+  import Thermometer from "../../../common/common_t/Thermometer.vue"
+  import BrokenLineDiagram from "../../../common/common_t/BrokenLineDiagram.vue"
   export default {
-    name: 'defualtComponnets'
+    name: 'defualtComponnets',
+    components:{
+      Thermometer,
+      BrokenLineDiagram
+    }
   }
 </script>
 
@@ -74,6 +83,7 @@
     margin-bottom: 50px;
     background-color: blue;
     border-radius: 10px;
+    position: relative;
   }
 
   /*SUNhemoon模块的颜色的渐变和里面的整体的布局*/
